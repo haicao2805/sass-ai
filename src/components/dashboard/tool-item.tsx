@@ -1,9 +1,9 @@
+import React from 'react'
 import { cn } from '@/lib/utils';
 import { cva } from 'class-variance-authority';
 import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react'
 
 export type ToolItemProps = {
   title: string;

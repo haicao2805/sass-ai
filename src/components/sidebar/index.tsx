@@ -1,9 +1,9 @@
 "use client";
 
+import React from 'react'
+import { UserButton, useUser } from '@clerk/nextjs';
 import { cn } from '@/lib/utils';
 import { useSidebarStore } from '@/store/sidebar-store';
-import { UserButton, useUser } from '@clerk/nextjs';
-import React from 'react'
 import SidebarToggle from './sidebar-toggle';
 import Logo from '../logo';
 import { MAX_FREE_COUNTS } from '@/constants';

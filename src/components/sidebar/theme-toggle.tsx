@@ -1,10 +1,10 @@
 "use client";
-import { THEME_MODES } from '@/constants';
-import { cn } from '@/lib/utils';
-import { useSidebarStore } from '@/store/sidebar-store';
+import React from 'react'
 import { Moon, Sun } from 'lucide-react';
 import { useTheme } from 'next-themes'
-import React from 'react'
+import { cn } from '@/lib/utils';
+import { useSidebarStore } from '@/store/sidebar-store';
+import { THEME_MODES } from '@/constants';
 
 const ThemeToggle = () => {
   const { setTheme, theme } = useTheme();

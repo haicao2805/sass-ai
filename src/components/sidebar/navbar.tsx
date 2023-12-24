@@ -1,12 +1,12 @@
 "use client";
 
-import { NAVIGATIONS } from '@/constants'
-import { cn } from '@/lib/utils';
-import { useSidebarStore } from '@/store/sidebar-store';
+import React from 'react'
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import React from 'react'
+import { NAVIGATIONS } from '@/constants'
+import { cn } from '@/lib/utils';
+import { useSidebarStore } from '@/store/sidebar-store';
 
 const Navbar = () => {
   const pathname = usePathname();

@@ -1,9 +1,9 @@
 "use client";
 
 import React from 'react'
-import { Button } from './ui/button';
-import { Sparkles } from 'lucide-react';
 import axios from 'axios';
+import { Sparkles } from 'lucide-react';
+import { Button } from './ui/button';
 import { useToast } from './ui/use-toast';
 
 type Props = {

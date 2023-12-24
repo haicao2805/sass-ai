@@ -1,10 +1,10 @@
 "use client";
 
-import Image from 'next/image';
 import React from 'react'
+import Image from 'next/image';
+import { X } from 'lucide-react';
 import { Button } from '../ui/button';
 import { useSidebarStore } from '@/store/sidebar-store';
-import { X } from 'lucide-react';
 
 const SidebarToggle = () => {
   const { isMinimal, handleChangeSidebar, handleOpenOrClose } = useSidebarStore();

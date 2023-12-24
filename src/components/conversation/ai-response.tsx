@@ -1,5 +1,5 @@
-import { BrainCircuit } from 'lucide-react'
 import React, { ReactNode } from 'react'
+import { BrainCircuit } from 'lucide-react'
 
 type Props = {
   children: ReactNode

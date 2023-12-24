@@ -1,8 +1,8 @@
 "use client";
 
 import React from 'react'
-import { Button } from './ui/button';
 import { Menu } from 'lucide-react';
+import { Button } from './ui/button';
 import { useSidebarStore } from '@/store/sidebar-store';
 import { cn } from '@/lib/utils';
 import Logo from './logo';

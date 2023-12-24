@@ -1,15 +1,14 @@
 "use client";
 
-import ToolsNavigation from '@/components/dashboard/tools-navigation';
 import React from 'react';
 import { useChat } from 'ai/react';
+import { Send } from 'lucide-react';
+import ToolsNavigation from '@/components/dashboard/tools-navigation';
 import { UserMessage } from '@/components/conversation/user-message';
 import { AiResponse } from '@/components/conversation/ai-response';
 import MarkdownResponse from '@/components/conversation/markdown-response';
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from '@/components/ui/button';
-import { Send } from 'lucide-react';
-import { error } from 'console';
 import { useProStore } from '@/store/pro-store';
 
 const ConversationPage = () => {

@@ -1,6 +1,6 @@
+import React from 'react'
 import { TOOLS } from '@/constants'
 import { cn } from '@/lib/utils'
-import React from 'react'
 import ToolItem from './tool-item'
 
 type Props = {

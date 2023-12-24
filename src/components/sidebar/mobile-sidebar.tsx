@@ -4,10 +4,6 @@ import React from 'react'
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
 } from "@/components/ui/sheet"
 import { useSidebarStore } from '@/store/sidebar-store';
 import Sidebar from '.';

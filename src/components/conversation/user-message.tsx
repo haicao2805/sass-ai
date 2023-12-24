@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { useUser } from '@clerk/nextjs'
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 type Props = {
   children: ReactNode

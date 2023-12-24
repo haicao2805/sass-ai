@@ -1,5 +1,5 @@
-import ToolsNavigation from '@/components/dashboard/tools-navigation'
 import React from 'react'
+import ToolsNavigation from '@/components/dashboard/tools-navigation'
 
 const DashboardPage = () => {
   return (
