@@ -4,7 +4,7 @@ import React from 'react'
 const DashboardPage = () => {
   return (
     <div>
-      <ToolsNavigation />
+      <ToolsNavigation title='Unlock the power of AI' />
     </div>
   )
 }

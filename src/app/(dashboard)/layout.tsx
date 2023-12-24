@@ -4,10 +4,11 @@ import MobileSidebar from '@/components/sidebar/mobile-sidebar'
 import MobileTopbar from '@/components/mobile-topbar'
 import { cn } from '@/lib/utils'
 import React, { ReactNode } from 'react'
+import { checkSubscription, getUserLimitCount } from '@/lib/user-limit'
 
-const DashboardLayout = ({ children }: { children: ReactNode }) => {
-  const isProPlan = false;
-  const userLimitCount = 0;
+const DashboardLayout = async ({ children }: { children: ReactNode }) => {
+  const isProPlan = await checkSubscription();
+  const userLimitCount = await getUserLimitCount();
 
   return (
     <div>
