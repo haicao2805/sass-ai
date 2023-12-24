@@ -65,6 +65,36 @@
     --ring: 212.7 26.8% 83.9%;
   }
 
+  h2 {
+    @apply text-5xl;
+  }
+
+  h2,
+  h3 {
+    @apply font-semibold;
+  }
+
+  h3 {
+    @apply text-4xl;
+  }
+
+  h4 {
+    @apply text-2xl;
+  }
+
+  h5 {
+    @apply text-xl;
+  }
+
+  h5,
+  h6 {
+    @apply font-medium;
+  }
+
+  h6 {
+    @apply text-lg;
+  }
+
   .scrollbar-none {
     scrollbar-width: none;
   }

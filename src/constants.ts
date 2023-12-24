@@ -1,10 +1,4 @@
-type ToolItemProps = {
-  title: string;
-  icon: string;
-  url: string;
-  color: string;
-  slug: string;
-};
+import { ToolItemProps } from "./components/dashboard/tool-item";
 
 export const TOOLS: ToolItemProps[] = [
   {
