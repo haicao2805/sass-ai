@@ -19,6 +19,7 @@ export const SubscriptionButton = ({ className, isProPlan }: Props) => {
     try {
       setLoading(true);
       const { data } = await axios.get("/api/stripe");
+      location.href = data.url;
     } catch (error) {
       toast({
         variant: "destructive",

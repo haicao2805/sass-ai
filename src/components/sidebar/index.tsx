@@ -70,7 +70,7 @@ const Sidebar = ({ className, isProPlan, userLimitCount }: Props) => {
                   />
                 </div>
               }
-              <SubscriptionButton isProPlan={true} />
+              <SubscriptionButton isProPlan={isProPlan} />
             </div>
           }
         </div>
