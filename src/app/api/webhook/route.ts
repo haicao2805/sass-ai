@@ -1,15 +1,13 @@
-import { headers } from "next/headers";
 import Stripe from "stripe";
 import { stripe } from "@/lib/stripe";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { prismadb } from "@/lib/prismadb";
 import { buffer } from "node:stream/consumers";
-import { NextApiRequest } from "next";
 
-export async function POST(req: NextApiRequest) {
+export async function POST(req: NextRequest) {
   try {
-    const buf = await buffer(req);
-    const sig = req.headers["stripe-signature"]!;
+    const buf = req.text();
+    const sig = req.headers.get("stripe-signature");
     console.log(buf);
     console.log(sig);
     console.log(process.env.STRIPE_WEBHOOK_SECRET!);
