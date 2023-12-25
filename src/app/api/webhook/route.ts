@@ -1,12 +1,14 @@
 import Stripe from "stripe";
 import { stripe } from "@/lib/stripe";
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { prismadb } from "@/lib/prismadb";
+import { buffer } from "node:stream/consumers";
+import { NextApiRequest } from "next";
 
-export async function POST(req: NextRequest) {
+export async function POST(req: NextApiRequest) {
   try {
-    const body = await req.text();
-    const signature = req.headers.get("stripe-signature") as string;
+    const body = await buffer(req);
+    const signature = req.headers["stripe-signature"] as string;
     console.log({
       body,
       signature,
