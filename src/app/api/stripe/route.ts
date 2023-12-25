@@ -56,6 +56,9 @@ export async function GET() {
     return NextResponse.json({ url: stripeSession.url }, { status: 200 });
   } catch (error) {
     console.log(error);
-    return new NextResponse("Something went wrong.", { status: 500 });
+    return NextResponse.json(
+      { message: "Something went wrong.", error: error },
+      { status: 500 },
+    );
   }
 }
