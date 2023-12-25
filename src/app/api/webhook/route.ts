@@ -1,22 +1,19 @@
 import Stripe from "stripe";
 import { stripe } from "@/lib/stripe";
-import { NextRequest, NextResponse } from "next/server";
-import { prismadb } from "@/lib/prismadb";
+import { headers } from "next/headers";
+import { NextResponse } from "next/server";
+import prismadb from "@/lib/prismadb";
 
-export async function POST(req: NextRequest) {
+export async function POST(req: Request) {
   try {
     const body = await req.text();
-    const signature = req.headers.get("stripe-signature") as string;
-    console.log({
-      body,
-      signature,
-      secret: process.env.STRIPE_WEBHOOK_SECRET!,
-    });
+    const signature = headers().get("Stripe-Signature") as string;
+
     let event: Stripe.Event;
 
     try {
       event = stripe.webhooks.constructEvent(
-        String(body),
+        body,
         signature,
         process.env.STRIPE_WEBHOOK_SECRET!,
       );
