@@ -26,7 +26,7 @@ export async function POST(req: Request) {
         return new NextResponse("UserId is required.", { status: 404 });
       }
 
-      await prismadb.userSubscription.create({
+      const userSubscription = await prismadb.userSubscription.create({
         data: {
           userId: session.metadata.userId,
           stripeSubscriptionId: subscription.id,
@@ -37,6 +37,7 @@ export async function POST(req: Request) {
           ),
         },
       });
+      console.log(userSubscription);
     }
 
     if (event.type === "invoice.payment_succeeded") {
@@ -44,7 +45,7 @@ export async function POST(req: Request) {
         session.subscription as string,
       );
 
-      await prismadb.userSubscription.update({
+      const userSubscription = await prismadb.userSubscription.update({
         where: {
           stripeSubscriptionId: subscription.id,
         },
@@ -55,6 +56,7 @@ export async function POST(req: Request) {
           ),
         },
       });
+      console.log(userSubscription);
     }
 
     return new NextResponse("Success", { status: 200 });
