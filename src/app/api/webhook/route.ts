@@ -28,6 +28,13 @@ export async function POST(req: NextRequest) {
 
     const session = event.data.object as Stripe.Checkout.Session;
 
+    if (!prismadb) {
+      return NextResponse.json(
+        { message: "No prismadb available" },
+        { status: 500 },
+      );
+    }
+
     if (event.type === "checkout.session.completed") {
       const subscription = await stripe.subscriptions.retrieve(
         session.subscription as string,
