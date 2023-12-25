@@ -2,7 +2,7 @@ import Stripe from "stripe";
 import { stripe } from "@/lib/stripe";
 import { headers } from "next/headers";
 import { NextResponse } from "next/server";
-import prismadb from "@/lib/prismadb";
+import { prismadb } from "@/lib/prismadb";
 
 export async function POST(req: Request) {
   try {
