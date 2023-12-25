@@ -1,4 +1,3 @@
-import { metadata } from "./../../layout";
 import { headers } from "next/headers";
 import Stripe from "stripe";
 import { stripe } from "@/lib/stripe";
@@ -9,11 +8,20 @@ export async function POST(req: Request) {
   try {
     const body = await req.text();
     const signature = headers().get("Stripe-Signature") as string;
-    const event = stripe.webhooks.constructEvent(
-      body,
-      signature,
-      process.env.STRIPE_WEBHOOK_SECRET!,
-    );
+
+    let event: Stripe.Event;
+
+    try {
+      event = stripe.webhooks.constructEvent(
+        body,
+        signature,
+        process.env.STRIPE_WEBHOOK_SECRET!,
+      );
+    } catch (error: any) {
+      return new NextResponse(`Webhook Error: ${error.message}`, {
+        status: 400,
+      });
+    }
 
     const session = event.data.object as Stripe.Checkout.Session;
 
