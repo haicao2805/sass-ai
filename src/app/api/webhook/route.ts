@@ -26,10 +26,7 @@ export async function POST(req: Request) {
     const session = event.data.object as Stripe.Checkout.Session;
 
     if (!prismadb) {
-      return NextResponse.json(
-        { message: "No prismadb available" },
-        { status: 500 },
-      );
+      return NextResponse.json({ message: "No prismadb." }, { status: 500 });
     }
 
     if (event.type === "checkout.session.completed") {
