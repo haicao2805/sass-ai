@@ -142,7 +142,7 @@ const VideoPage = () => {
               </Button>
             </div>
           </>
-          : <ToolsNavigation title='Audio' />}
+          : <ToolsNavigation title='Video' />}
       </div>
       <div className="mb-3">
         <Form {...form}>
