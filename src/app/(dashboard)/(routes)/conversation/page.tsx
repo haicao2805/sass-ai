@@ -10,6 +10,7 @@ import MarkdownResponse from '@/components/conversation/markdown-response';
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from '@/components/ui/button';
 import { useProStore } from '@/store/pro-store';
+import { cn } from '@/lib/utils';
 
 const ConversationPage = () => {
   const containerRef = React.useRef<HTMLDivElement>(null);
@@ -25,13 +26,24 @@ const ConversationPage = () => {
     }
   }, [error, handleOpenOrCloseProModal])
 
+  React.useEffect(() => {
+    if (containerRef.current) {
+      containerRef.current.scrollTop = containerRef.current.scrollHeight;
+    }
+  }, [messages]);
+
   const handleClearChat = () => {
     setMessages([]);
   }
 
   return (
     <div className='h-full flex flex-col justify-between relative'>
-      <div ref={containerRef} className='overflow-y-auto space-y-10 scroll-smooth h-[calc(100vh-180px)]'>
+      <div
+        ref={containerRef}
+        className={cn(
+          "h-[calc(100vh-180px)] pl-4 overflow-y-auto space-y-10 scroll-smooth",
+          "lg:pl-0"
+        )}>
         {
           messages.length > 0 ?
             <>
